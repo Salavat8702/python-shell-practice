@@ -1,0 +1,86 @@
+def add(a, b): return a + b
+def sub(a, b): return a - b
+def mul(a, b): return a * b
+def div(a, b): return a / b if b != 0 else "Error: Divide by zero"
+
+if __name__ == "__main__":
+    print(add(5, 3))
+    print(sub(10, 4))
+    print(mul(6, 7))
+    print(div(12, 3))
+with open("example.txt", "w") as f:
+    f.write("Hello World\nThis is a test file.")
+
+with open("example.txt", "r") as f:
+    for line in f:
+        print(line.strip())
+import requests
+
+url = "https://api.coindesk.com/v1/bpi/currentprice.json"
+response = requests.get(url).json()
+
+print("Bitcoin price:", response["bpi"]["USD"]["rate"])
+import json
+
+data = {"name": "LegionUser", "level": 1}
+
+with open("data.json", "w") as f:
+    json.dump(data, f, indent=2)
+
+with open("data.json", "r") as f:
+    loaded = json.load(f)
+    print(loaded)
+from web3 import Web3
+
+rpc = "https://example-rpc.com"
+w3 = Web3(Web3.HTTPProvider(rpc))
+
+print("Connected:", w3.is_connected())
+import math
+
+nums = [1, 4, 9, 16, 25]
+roots = [math.sqrt(x) for x in nums]
+
+print("Roots:", roots)
+import datetime
+
+def log(message):
+    with open("app.log", "a") as f:
+        f.write(f"{datetime.datetime.now()} — {message}\n")
+
+log("Program started")
+log("Test log entry")
+#!/bin/bash
+sudo apt update && sudo apt upgrade -y
+echo "System updated!"
+#!/bin/bash
+SOURCE="/home/user/data"
+DEST="/home/user/backup"
+
+cp -r $SOURCE $DEST
+echo "Backup completed!"
+#!/bin/bash
+sudo rm -rf /var/log/*.log
+echo "Logs cleared!"
+#!/bin/bash
+sudo useradd -m newuser
+echo "User created!"
+#!/bin/bash
+echo "Uptime:"
+uptime
+
+echo "Memory:"
+free -h
+
+echo "Disk:"
+df -h
+#!/bin/bash
+git add .
+git commit -m "Auto update"
+git push
+echo "Pushed to GitHub!"
+#!/bin/bash
+echo "Starting fake node..."
+sleep 2
+echo "Node running on port 8545"
+
